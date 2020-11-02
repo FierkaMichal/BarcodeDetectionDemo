@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">SoftMark</string>
+    <string name="send_email">Wyślij email</string>
+    <string name="scan_code">Skanuj kod</string>
+    <string name="receiver_email">fierka@olewnik.com.pl</string>
+    <string name="receiver_placeholder">Adres odbiorcy</string>
+    <string name="email_msg_placeholder">Wiadomość</string>
+    <string name="password_placeholder">Hasło nadawcy</string>
+    <string name="email_sender_placeholder">Adres nadawcy</string>
+    <string name="port_smtp_placeholder">Port SMTP</string>
+    <string name="host_smtp_placeholder">Host SMTP</string>
+    <string name="take_photo">Zrób zdjęcie</string>
+</resources>
