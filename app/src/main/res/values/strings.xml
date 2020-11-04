@@ -10,4 +10,5 @@
     <string name="port_smtp_placeholder">Port SMTP</string>
     <string name="host_smtp_placeholder">Host SMTP</string>
     <string name="take_photo">Zrób zdjęcie</string>
+    <string name="print">Drukuj</string>
 </resources>

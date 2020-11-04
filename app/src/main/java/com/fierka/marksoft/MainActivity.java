@@ -14,9 +14,11 @@ import androidx.camera.view.PreviewView;
 import androidx.core.content.ContextCompat;
 import com.fierka.marksoft.barcode.BarcodeService;
 import com.fierka.marksoft.email.EmailSender;
+import com.fierka.marksoft.printer.FilePrinterService;
 import com.google.common.util.concurrent.ListenableFuture;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.LinkedHashSet;
 import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends AppCompatActivity {
@@ -114,5 +116,10 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(context, exception.toString(), 2000);
             }
         });
+    }
+
+    public void onPrintClick(View view) {
+        FilePrinterService printer = new FilePrinterService();
+        printer.print(this.context);
     }
 }
