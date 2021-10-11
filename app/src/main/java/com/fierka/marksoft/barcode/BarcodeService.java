@@ -1,7 +1,6 @@
 package com.fierka.marksoft.barcode;
 
 import android.media.Image;
-import android.widget.TextView;
 import androidx.camera.core.ImageProxy;
 import com.google.mlkit.vision.barcode.Barcode;
 import com.google.mlkit.vision.barcode.BarcodeScanner;
@@ -11,7 +10,7 @@ import com.google.mlkit.vision.common.InputImage;
 public class BarcodeService {
 
     @androidx.camera.core.ExperimentalGetImage
-    public void analyze(ImageProxy imageProxy, TextView textView) {
+    public void analyze(ImageProxy imageProxy) {
         BarcodeScanner scanner = BarcodeScanning.getClient();
 
         Image mediaImage = imageProxy.getImage();
@@ -29,9 +28,9 @@ public class BarcodeService {
                     }
                 }
                 if (i > 0) {
-                    textView.setText(builder.toString());
+//                    textView.setText(builder.toString());
                 } else {
-                    textView.setText("Nie znaleziono kodów");
+//                    textView.setText("Nie znaleziono kodów");
                 }
             }).addOnFailureListener(Throwable::printStackTrace);
         }

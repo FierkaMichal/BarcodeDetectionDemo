@@ -79,11 +79,16 @@
             android:onClick="onScanCodeClick"/>
 
         <Button
-            android:id="@+id/print-btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/print"
             android:onClick="onPrintClick"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/stt_goto"
+            android:onClick="onSttClick"/>
     </LinearLayout>
 
     <TextView

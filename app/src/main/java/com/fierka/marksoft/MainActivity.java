@@ -1,6 +1,7 @@
 package com.fierka.marksoft;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -15,10 +16,10 @@ import androidx.core.content.ContextCompat;
 import com.fierka.marksoft.barcode.BarcodeService;
 import com.fierka.marksoft.email.EmailSender;
 import com.fierka.marksoft.printer.FilePrinterService;
+import com.fierka.marksoft.stt.SpeechToTextActivity;
 import com.google.common.util.concurrent.ListenableFuture;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.LinkedHashSet;
 import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends AppCompatActivity {
@@ -107,13 +108,13 @@ public class MainActivity extends AppCompatActivity {
             public void onCaptureSuccess(@NonNull @NotNull ImageProxy image) {
                 barcodeTextView.setText("");
                 BarcodeService barcodeService = new BarcodeService();
-                barcodeService.analyze(image, barcodeTextView);
+                barcodeService.analyze(image);
                 image.close();
             }
 
             @Override
             public void onError(@NonNull @NotNull ImageCaptureException exception) {
-                Toast.makeText(context, exception.toString(), 2000);
+                Toast.makeText(context, exception.toString(), Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -121,5 +122,14 @@ public class MainActivity extends AppCompatActivity {
     public void onPrintClick(View view) {
         FilePrinterService printer = new FilePrinterService();
         printer.print(this.context);
+    }
+
+    public void setBarcodeText(String text) {
+        this.barcodeTextView.setText(text);
+    }
+
+    public void onSttClick(View view) {
+        Intent intent = new Intent(MainActivity.this, SpeechToTextActivity.class);
+        MainActivity.this.startActivity(intent);
     }
 }

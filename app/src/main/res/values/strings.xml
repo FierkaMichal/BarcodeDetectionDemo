@@ -11,4 +11,6 @@
     <string name="host_smtp_placeholder">Host SMTP</string>
     <string name="take_photo">Zrób zdjęcie</string>
     <string name="print">Drukuj</string>
+    <string name="stt_goto">SST</string>
+    <string name="tap_to_speak">Naciśnij</string>
 </resources>
